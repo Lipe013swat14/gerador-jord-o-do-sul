@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de RG - Jordão do Sul</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+        <p>Feito por lipez21 | <a href="https://discord.gg/Gjn9cbx4Yw" target="_blank">Discord do RP</a></p>
+    </div>
+
+    <div class="container">
+        <h1>Gerador de RG - Jordão do Sul</h1>
+        <form id="rgForm">
+            <div class="form-group">
+                <label for="profilePhoto">Colocar foto de perfil:</label>
+                <input type="file" id="profilePhoto" accept="image/*" required>
+            </div>
+            <div class="form-row">
+                <div class="form-column">
+                    <label for="robloxNick">Nick do Roblox:</label>
+                    <input type="text" id="robloxNick" name="robloxNick" placeholder="Seu Nick do Roblox" required>
+                </div>
+                <div class="form-column">
+                    <label for="rpName">Nome no RP:</label>
+                    <input type="text" id="rpName" name="rpName" placeholder="Nome no Roleplay" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-column">
+                    <label for="rpAge">Idade no RP:</label>
+                    <input type="number" id="rpAge" name="rpAge" placeholder="Idade no Roleplay" required>
+                </div>
+                <div class="form-column">
+                    <label for="education">Ensinos escolares:</label>
+                    <input type="text" id="education" name="education" placeholder="Ex: Ensino Médio Completo" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-column">
+                    <label for="civilStatus">Estado Civil:</label>
+                    <select id="civilStatus" name="civilStatus" required>
+                        <option value="" disabled selected>Selecione</option>
+                        <option value="Solteiro(a)">Solteiro(a)</option>
+                        <option value="Casado(a)">Casado(a)</option>
+                        <option value="Divorciado(a)">Divorciado(a)</option>
+                        <option value="Viúvo(a)">Viúvo(a)</option>
+                    </select>
+                </div>
+            </div>
+            <button type="button" onclick="gerarRG()">Gerar RG</button>
+        </form>
+
+        <div id="rgDisplay" class="rg-card" style="display: none;">
+            <h2>RG - Jordão do Sul</h2>
+            <div class="rg-content">
+                <div class="rg-info">
+                    <p><strong>Nick do Roblox:</strong> <span id="displayNick"></span></p>
+                    <p><strong>Nome no RP:</strong> <span id="displayName"></span></p>
+                    <p><strong>Idade no RP:</strong> <span id="displayAge"></span></p>
+                    <p><strong>Origem:</strong> Brasileira</p>
+                    <p><strong>Ensinos escolares:</strong> <span id="displayEducation"></span></p>
+                    <p><strong>Estado Civil:</strong> <span id="displayCivilStatus"></span></p>
+                    <p><strong>Número de Série:</strong> <span id="displaySeriesNumber"></span></p>
+                    <p><strong>Data de Emissão:</strong> <span id="displayIssueDate"></span></p>
+                </div>
+                <div class="rg-photo">
+                    <img id="rgPhoto" src="" alt="Foto de Perfil">
+                </div>
+            </div>
+            <div class="rg-signature">
+                <p><strong>Assinatura:</strong></p>
+                <p id="signature" class="signature-field"></p>
+                <div class="signature-line"></div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
